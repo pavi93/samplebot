@@ -18,8 +18,4 @@ To Run the Application -
 NOTE - Before Running each test case on /action api, invoke /charge api to reset battery to 100,as application is designed to maintain state until page reload
 
 
-Language & Frameworks Used
-1)Java
-2)Springboot
-3)Angular JS
-4)Bootstrap CSS
+Language & Frameworks Used - Java,Springboot,AngularJS,Bootstrap CSS
