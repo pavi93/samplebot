@@ -1,0 +1,25 @@
+name: CI-robo-docker
+on:
+  push: 
+    branches: [main]
+jobs: 
+  docker: 
+    runs-on: ubuntu-latest
+    steps:
+    -
+      uses: actions/checkout@v2
+    -
+      run: |
+        set -x
+        docker build -t robopavi --no-cache .
+        docker run --rm -d robopavi
+        while true
+          do 
+            sleep 1
+            docker ps | grep Up && break
+          done
+        while true
+          do 
+            sleep 1
+            docker exec $( docker ps -q ) ps | grep "java -jar" && break
+          done
