@@ -11,8 +11,8 @@ jobs:
     -
       run: |
         set -x
-        docker build -t robopavi --no-cache .
-        docker run --rm -d robopavi
+        docker build -t robospringpavi --no-cache .
+        docker run --rm -d robospringpavi
         while true
           do 
             sleep 1
