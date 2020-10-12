@@ -1,4 +1,4 @@
-name: CI-robo-docker
+name: CI-robo
 on:
   push: 
     branches: [main]
