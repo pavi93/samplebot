@@ -11,6 +11,7 @@ public class RobotApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RobotApplication.class, args);
+		System.out.println("App started Successfully");
 	}
 	
 	@Bean
