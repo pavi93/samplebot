@@ -1,5 +1,7 @@
 # samplebot
 
+![CI-robo](https://github.com/pavi93/samplebot/workflows/CI-robo/badge.svg)
+
 To Run the Application - 
 
 1) Download robot-0.0.1-SNAPSHOT 
