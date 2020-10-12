@@ -1,4 +1,4 @@
-FROM alpine/git:latest AS clone
+
 
 ARG dir=clone-folder
 ARG hostname=github.com
