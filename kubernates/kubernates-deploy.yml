@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: robo-deploy
+spec:
+  selector:
+    matchLabels:
+      app: robo
+  template: 
+    metadata:
+      labels:
+        app: robo
+    spec:
+      containers: 
+      -
+        image: mailmepavi93/robo:latest
+        name: robo-container
+        ports:
+        -
+          containerPort: 8082
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: robo-netpol
+spec:
+  ingress:
+  -
+    ports:
+    -
+      port: 8082
+  podSelector:
+    matchLabels:
+      app: robo
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: robo-svc
+spec:
+  ports:
+  -
+    nodePort: 30001
+    port: 80
+    targetPort: 8082
+  selector:
+    app: robo
+  type: NodePort
